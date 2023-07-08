@@ -27,9 +27,9 @@ By exploring the provided notebooks and technical report, you can gain a compreh
 ### CryCeleb2023 challenge
 
 The task for CryCeleb2023 is similar to a common speaker verification, but here the evaluation set consists of pairs of baby cry recordings from the time of birth (period 'B') and the time of discharge (period 'D') from the hospital. The task is to predict if both pairs come from the same baby. The verification system should possess the ability to analyze any given pair of cries and assign a similarity score to ascertain whether the two tracks belong to the same baby.
-T
 
-he provided dataset consists of data from 786 babies, organized as described in table. It is important to note that not all babies have sound recordings available from both periods for training purposes.
+
+The provided dataset consists of data from 786 babies, organized as described in table. It is important to note that not all babies have sound recordings available from both periods for training purposes.
 
 | Split  | Both B and D  | Only B  | Only D  |
 |---|---|---|---|
