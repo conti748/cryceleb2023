@@ -114,7 +114,7 @@ hyper-parameter selection, that can further improve the performances.
 
 
 ## Evaluation
-The notebook evaluate.ipynb evaluate the prediction using the fine-tuned model on the dev-set and the test-set to produce the final submission.
+The notebook ```evaluate.ipynb``` evaluate the prediction using the fine-tuned model on the dev-set and the test-set to produce the final submission.
 The notebook download the data from HF_hub and the fine-tuned model from Google-Drive, you can manually download the model [here](https://drive.google.com/file/d/1eZnYIlL5ZrLKoqBoEUow9M_EfX1Xt0MQ/view?usp=sharing).
 
 
@@ -127,4 +127,12 @@ it is clear that the classes are well separated and the score for pairs from dif
 
 ## Training
 
-To train the model, follow these steps:
+The notebook ```train.ipynb`` can be used to reproduce the training and further experiments. 
+The notebook:
+- Implements the concatenation of recordings, grouping them solely by baby_id instead of using period, as done in the baseline.
+- Randomly splits the data instead of dividing it by period.
+- Defines a torch dataloader with a customized batch_sampler. During each iteration, a batch of indices is extracted and subsequently sampled with replacement, ensuring that the batch contains some audios associated with the same baby (positive samples in the triplet loss).
+- Trains the model using triplet loss with online batch hard-mining.
+- Saves the best 5 models based on validation loss.
+  
+
