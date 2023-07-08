@@ -45,7 +45,7 @@ For details about the dataset refer to [paper](https://arxiv.org/pdf/2305.00969.
 
 ### CryCeleb base-line approach
 
-As the problem is similar to a verification task, the base-line is build upon the VoxCeleb speaker verification network from speechbrain (you can found details [here](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb). The baseline method fine-tunes the VoxCeleb network using the CryCeleb training data, with the goal of training a classifier capable of identifying each baby in the training set. 
+As the problem is similar to a verification task, the base-line is build upon the VoxCeleb speaker verification network from speechbrain (you can found details [here](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb)). The baseline method fine-tunes the VoxCeleb network using the CryCeleb training data, with the goal of training a classifier capable of identifying each baby in the training set. 
 
 The training process specifically focuses on infants who have both B and D recordings available. During training, all B recordings are utilized, while the D recordings are reserved for validation. This approach allows the authors to construct a classifier that can associate the learned patterns from birth recordings with corresponding discharge recordings, enabling accurate identification and verification. Then, the classification head is removed and the network is used as an embedding. Consine similarity is used on the embedded recording to perform the verification.
 
@@ -80,7 +80,7 @@ potentially compensating for the limited number of samples
 in the challenge dataset.
 
 By employing the triplet loss training and the unified dataset split 
-technique, our solution offers several advantages over the baseline approach:
+technique, the proposed solution offers several advantages over the baseline approach:
 
 - Enhanced Representation Learning: The use of triplet loss training enables
 the network to learn more nuanced representations, capturing subtle
@@ -95,7 +95,7 @@ training. By prioritizing difficult samples, the model further improves
 its discriminative capabilities, leading to enhanced performance.
 
 - Maximizing Data Utilization: By utilizing the complete dataset without 
-splitting based on periods, our solution maximizes the available data for
+splitting based on periods, the triplet-loss solution maximizes the available data for
 training the embedding. This approach potentially mitigates the limitations
 posed by a limited number of samples, allowing the model to generalize
 better.
