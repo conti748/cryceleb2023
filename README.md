@@ -10,9 +10,9 @@ accompanying the challange.
 In details, while the baseline utilizes transfer learning by fine-tuning a classifier and extracting embeddings without the classification head, the herein presented approach fine-tune the same network using triplet-loss, enabling the model to directly learn an embedding representation.
 
 You can find:
+- technical report: a technical discussion detailing the approach used in this solution, providing in-depth insights into the methodology and techniques employed.
 - evaluation: a notebook to evaluate the performance of the trained network and reproduce the performance achieved in the competition on the dev and test sets.
 - training: a notebook to reproduce the training of the network, allowing you to fine-tune the model using triplet-loss.
-- technical report: a technical discussion detailing the approach used in this solution, providing in-depth insights into the methodology and techniques employed.
 
   
 By exploring the provided notebooks and technical report, you can gain a comprehensive understanding of the proposed solution and further contribute to advancements in audio analysis and verification.
@@ -21,13 +21,32 @@ By exploring the provided notebooks and technical report, you can gain a compreh
 
 ## Technical Report
 
-### CryCeleb challenge
+### CryCeleb2023 challenge
 
-The evaluation set consists of pairs of baby cry recordings from the time of birth and the time of discharge from the hospital. The task is to predict if both pairs come from the same baby.
+The task for CryCeleb2023 is similar to a common speaker verification, but here the evaluation set consists of pairs of baby cry recordings from the time of birth (period 'B') and the time of discharge (period 'D') from the hospital. The task is to predict if both pairs come from the same baby. The verification system should possess the ability to analyze any given pair of cries and assign a similarity score to ascertain whether the two tracks belong to the same baby.
+T
+
+he provided dataset consists of data from 786 babies, organized as described in table. It is important to note that not all babies have sound recordings available from both periods for training purposes.
+
+| Split  | Both B and D  | Only B  | Only D  |
+|---|---|---|---|
+| train  |  348 |  183 |  55 |   ||
+|  dev | 40  |  0 |  0 |   ||
+|  test |  160 | 0  |  0 |   ||
+
+
+For details about the dataset refer to [paper](https://arxiv.org/pdf/2305.00969.pdf).
+
+
+
 
 ### CryCeleb base-line approach
 
-XXXXXX
+As the problem is similar to a verification task, the base-line is build upon the VoxCeleb speaker verification network from speechbrain (you can found details [here](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb). The baseline method fine-tunes the VoxCeleb network using the CryCeleb training data, with the goal of training a classifier capable of identifying each baby in the training set. 
+
+The training process specifically focuses on infants who have both B and D recordings available. During training, all B recordings are utilized, while the D recordings are reserved for validation. This approach allows the authors to construct a classifier that can associate the learned patterns from birth recordings with corresponding discharge recordings, enabling accurate identification and verification. Then, the classification head is removed and the network is used as an embedding. Consine similarity is used on the embedded recording to perform the verification.
+
+
 
 ### Proposed Solution
 
