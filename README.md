@@ -108,8 +108,7 @@ accuracy and better generalization compared to the baseline approach.
 It is emphasized that a proper hyperparameter selection was not performed due to limited resource availability. In fact, all trainings were conducted using Google Colab. This limitation may significantly impact the performance and further improvements can be achieved by conducting a thorough hyperparameter tuning.
 
 
-The entire solution has been developed using Google Colab without a proper
-hyper-parameter selection, that can further improve the performances.
+The model has been trained without setting a seed, so the training is not properly reproducible. However, the trained model that achieved the score on the leaderboard is also provided.
 
 
 
@@ -127,7 +126,7 @@ it is clear that the classes are well separated and the score for pairs from dif
 
 ## Training
 
-The notebook ```train.ipynb`` can be used to reproduce the training and further experiments. 
+The notebook ```train.ipynb``` can be used to reproduce the training and further experiments. 
 The notebook:
 - Implements the concatenation of recordings, grouping them solely by baby_id instead of using period, as done in the baseline.
 - Randomly splits the data instead of dividing it by period.
