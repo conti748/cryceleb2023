@@ -12,24 +12,26 @@ In details, while the baseline utilizes transfer learning by fine-tuning a class
 You can find:
 - evaluation: a notebook to evaluate the performance of the trained network and reproduce the performance achieved in the competition on the dev and test sets.
 - training: a notebook to reproduce the training of the network, allowing you to fine-tune the model using triplet-loss.
-- technical approach: a technical report detailing the approach used in this solution, providing in-depth insights into the methodology and techniques employed.
+- technical report: a technical discussion detailing the approach used in this solution, providing in-depth insights into the methodology and techniques employed.
+
+  
 By exploring the provided notebooks and technical report, you can gain a comprehensive understanding of the proposed solution and further contribute to advancements in audio analysis and verification.
 
 
 
-## Evaluation
-The notebook evaluate.ipynb us
+## Technical Report
 
+### CryCeleb challenge
 
-## Training
+The evaluation set consists of pairs of baby cry recordings from the time of birth and the time of discharge from the hospital. The task is to predict if both pairs come from the same baby.
 
-To train the model, follow these steps:
+### CryCeleb base-line approach
 
+XXXXXX
 
-## Technical Approach
+### Proposed Solution
 
-The proposed solution introduces the following key improvements over 
-the baseline approach:
+The proposed solution introduces the following key improvements over the baseline approach:
 
 1) Training an embedding with Triplet Loss:
 
@@ -86,3 +88,16 @@ It is emphasized that a proper hyperparameter selection was not performed due to
 
 The entire solution has been developed using Google Colab without a proper
 hyper-parameter selection, that can further improve the performances.
+
+
+
+## Evaluation
+The notebook evaluate.ipynb evaluate the prediction using the fine-tuned model on the dev-set and the test-set to produce the final submission.
+The notebook download the data from HF_hub and the fine-tuned model from Google-Drive, you can manually download the model [here](https://drive.google.com/file/d/1eZnYIlL5ZrLKoqBoEUow9M_EfX1Xt0MQ/view?usp=sharing).
+
+Here, you can find the performance on the dev-set.... XXXXX
+
+
+## Training
+
+To train the model, follow these steps:
