@@ -117,7 +117,12 @@ hyper-parameter selection, that can further improve the performances.
 The notebook evaluate.ipynb evaluate the prediction using the fine-tuned model on the dev-set and the test-set to produce the final submission.
 The notebook download the data from HF_hub and the fine-tuned model from Google-Drive, you can manually download the model [here](https://drive.google.com/file/d/1eZnYIlL5ZrLKoqBoEUow9M_EfX1Xt0MQ/view?usp=sharing).
 
-Here, you can find the performance on the dev-set.... XXXXX
+
+Here, you can find the performance on the dev-set for 1600 pairs related to 40 babies (label 1 for pairs from the same baby, 0 otherwise). From this plot,
+it is clear that the classes are well separated and the score for pairs from different babies has a zero-mean with gaussian distribution.
+
+![image](https://github.com/conti748/cryceleb2023/assets/84905628/0bf3e04d-d005-4306-ad7b-528684e64474)
+
 
 
 ## Training
