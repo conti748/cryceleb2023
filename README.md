@@ -28,7 +28,7 @@ To train the model, follow these steps:
 
 ## Technical Approach
 
-Our proposed solution introduces the following key improvements over 
+The proposed solution introduces the following key improvements over 
 the baseline approach:
 
 1) Training an embedding with Triplet Loss:
@@ -37,21 +37,21 @@ Instead of training a classifier, the solution focuses on training an
 embedding using a triplet loss approach. The primary objective is to 
 minimize the embedding distance between samples from the same babies
 while simultaneously maximizing the distance for pairs of different infants.
-By adopting a training loop based on online hard batch mining, we
-dynamically generate pairs of samples to ensure effective discrimination
+By adopting a training loop based on online hard batch mining, the solution
+dynamically generates pairs of samples to ensure effective discrimination
 between similar and dissimilar instances. This approach facilitates 
 learning a more discriminative embedding space, which can enhance the accuracy of the subsequent verification task.
 
 2) Unified Dataset Split Technique:
 
 Unlike the baseline approach, which distinguishes between the 'B' and 'D' 
-periods of audio track capture, our solution considers the entire dataset 
-for the verification task. We found that attempts to divide the dataset 
+periods of audio track capture, the solution considers the entire dataset 
+for the verification task. From experiments, attempts to divide the dataset 
 into training and validation sets using different split techniques 
-did not yield successful results. Therefore, we adopted a unified
-approach to leverage the complete dataset for training the embedding. 
+did not yield successful results. Therefore, a unified
+approach is used to leverage the complete dataset for training the embedding. 
 By not separating the audio tracks based on periods,
-our solution maximizes the available data for training, 
+the solution maximizes the available data for training, 
 potentially compensating for the limited number of samples 
 in the challenge dataset.
 
@@ -62,7 +62,8 @@ technique, our solution offers several advantages over the baseline approach:
 the network to learn more nuanced representations, capturing subtle
 differences between crying babies. This improved representation learning
 can enhance the model's ability to discriminate between different 
-instances effectively.
+instances effectively. Further, It is widely shared that triplet loss performs
+better than Additive Angular Margin (used in the baseline) on small-sized datasets.
 
 - Focus on Challenging Samples: The adoption of online hard batch mining
 ensures that the network focuses on the most challenging samples during
@@ -75,9 +76,13 @@ training the embedding. This approach potentially mitigates the limitations
 posed by a limited number of samples, allowing the model to generalize
 better.
 
-Overall, our modifications enhance the solution's ability to tackle the problem of
-verifying audio tracks containing crying babies. We expect that these improvements can lead to higher 
+Overall, the modifications enhance the solution's ability to tackle the problem of
+verifying audio tracks containing crying babies. These improvements can lead to higher 
 accuracy and better generalization compared to the baseline approach.
+
+### Remark
+It is emphasized that a proper hyperparameter selection was not performed due to limited resource availability. In fact, all trainings were conducted using Google Colab. This limitation may significantly impact the performance and further improvements can be achieved by conducting a thorough hyperparameter tuning.
+
 
 The entire solution has been developed using Google Colab without a proper
 hyper-parameter selection, that can further improve the performances.
