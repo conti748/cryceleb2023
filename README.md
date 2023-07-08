@@ -2,14 +2,17 @@
 # cryceleb2023: Triplet Loss for Infant Cry Verification - CryCeleb2023 Solution
 
 This repository presents a solution to the problem of verifying audio
-tracks containing crying babies, as proposed in the [CryCeleb2023](https://huggingface.co/spaces/competitions/CryCeleb2023) challenge.
+tracks containing crying babies, addressing the challenge presented in [CryCeleb2023](https://huggingface.co/spaces/competitions/CryCeleb2023).
 The proposed solution achieved the 3rd place in the private leadebord and the 1st
 in the public leaderbord.
+
+
 The solution builds upon the [baseline](https://github.com/Ubenwa/cryceleb2023) approach provided in the notebook 
 accompanying the challange. 
-In details, while the baseline utilizes transfer learning by fine-tuning a classifier and extracting embeddings without the classification head, the herein presented approach fine-tune the same network using triplet-loss, enabling the model to directly learn an embedding representation.
+In details, the baseline approach uses transfer learning by fine-tuning a classifier and extracting embeddings without the classification head. In contrast, the presented approach fine-tunes the same network using triplet-loss, enabling the model to directly learn an embedding representation.
 
-You can find:
+
+This repository contains:
 - technical report: a technical discussion detailing the approach used in this solution, providing in-depth insights into the methodology and techniques employed.
 - evaluation: a notebook to evaluate the performance of the trained network and reproduce the performance achieved in the competition on the dev and test sets.
 - training: a notebook to reproduce the training of the network, allowing you to fine-tune the model using triplet-loss.
