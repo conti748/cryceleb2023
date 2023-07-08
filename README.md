@@ -10,13 +10,15 @@ accompanying the challange.
 In details, while the baseline utilizes transfer learning by fine-tuning a classifier and extracting embeddings without the classification head, the herein presented approach fine-tune the same network using triplet-loss, enabling the model to directly learn an embedding representation.
 
 You can find:
-- Evaluation: a notebook to evaluate the performance of the network and to reproduce the performance...
-- Training: a notebook to reproduce the training of the network...
-- Techincal Approach: a technical report detailing the used approach
+- evaluation: a notebook to evaluate the performance of the trained network and reproduce the performance achieved in the competition on the dev and test sets.
+- training: a notebook to reproduce the training of the network, allowing you to fine-tune the model using triplet-loss.
+- technical approach: a technical report detailing the approach used in this solution, providing in-depth insights into the methodology and techniques employed.
+By exploring the provided notebooks and technical report, you can gain a comprehensive understanding of the proposed solution and further contribute to advancements in audio analysis and verification.
 
 
 
 ## Evaluation
+The notebook evaluate.ipynb us
 
 
 ## Training
