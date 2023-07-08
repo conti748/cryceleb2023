@@ -55,7 +55,7 @@ The training process specifically focuses on infants who have both B and D recor
 
 The proposed solution introduces the following key improvements over the baseline approach:
 
-1) Training an embedding with Triplet Loss:
+1) **Training an embedding with Triplet Loss**:
 
 Instead of training a classifier, the solution focuses on training an 
 embedding using a triplet loss approach. The primary objective is to 
@@ -66,7 +66,7 @@ dynamically generates pairs of samples to ensure effective discrimination
 between similar and dissimilar instances. This approach facilitates 
 learning a more discriminative embedding space, which can enhance the accuracy of the subsequent verification task.
 
-2) Unified Dataset Split Technique:
+2) **Unified Dataset Split Technique**:
 
 Unlike the baseline approach, which distinguishes between the 'B' and 'D' 
 periods of audio track capture, the solution considers the entire dataset 
@@ -82,19 +82,19 @@ in the challenge dataset.
 By employing the triplet loss training and the unified dataset split 
 technique, the proposed solution offers several advantages over the baseline approach:
 
-- Enhanced Representation Learning: The use of triplet loss training enables
+- **Enhanced Representation Learning**: The use of triplet loss training enables
 the network to learn more nuanced representations, capturing subtle
 differences between crying babies. This improved representation learning
 can enhance the model's ability to discriminate between different 
 instances effectively. Further, It is widely shared that triplet loss performs
 better than Additive Angular Margin (used in the baseline) on small-sized datasets.
 
-- Focus on Challenging Samples: The adoption of online hard batch mining
+- **Focus on Challenging Samples**: The adoption of online hard batch mining
 ensures that the network focuses on the most challenging samples during
 training. By prioritizing difficult samples, the model further improves
 its discriminative capabilities, leading to enhanced performance.
 
-- Maximizing Data Utilization: By utilizing the complete dataset without 
+- **Maximizing Data Utilization**: By utilizing the complete dataset without 
 splitting based on periods, the triplet-loss solution maximizes the available data for
 training the embedding. This approach potentially mitigates the limitations
 posed by a limited number of samples, allowing the model to generalize
